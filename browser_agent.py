@@ -3,13 +3,13 @@ import uuid
 from typing import Dict, Any
 from playwright.async_api import Page
 import re
-from Status_client import StatusClient
-
+from status_client import StatusClient
+from llm_provider import LLMProvider
 from browser_use import (
     Agent,
     Browser,
     BrowserProfile,
-    ChatOllama,
+    
 )
 
 
@@ -20,10 +20,7 @@ class BrowserAgent:
         self.sessions: Dict[str, Dict[str, Any]] = {}
         self.waiting_sessions = {}
         
-        self.llm = ChatOllama(
-            model="qwen2.5:3b",
-            host="http://localhost:11434"
-        )
+        self.llm = LLMProvider.get_llm()
         self.status_client = StatusClient()
 
         self.browser_profile = BrowserProfile(

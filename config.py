@@ -6,7 +6,8 @@ load_dotenv()
 
 class Config:
 
-    # Ollama
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
     OLLAMA_BASE_URL = os.getenv(
         "OLLAMA_BASE_URL",
         "http://localhost:11434"
@@ -16,10 +17,9 @@ class Config:
         "OLLAMA_MODEL",
         "qwen2.5:3b"
     )
-
     # Browser
 
-    HEADLESS = False
+    HEADLESS = True
 
     SLOW_MO = 300
 
