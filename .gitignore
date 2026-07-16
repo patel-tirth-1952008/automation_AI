@@ -1,6 +1,7 @@
 venv/
-__pycache__/
 .env
+.git/
+__pycache__/
 .vscode/
 .idea/
 *.pyc
