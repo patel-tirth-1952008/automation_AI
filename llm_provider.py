@@ -10,7 +10,8 @@ class LLMProvider:
 
         return ChatGoogleGenerativeAI(
 
-            model=Config.OLLAMA_MODEL,
+            model="gemini-2.5-flash",
+            google_api_key=os.getenv("GEMINI_API_KEY"),
 
             base_url=Config.OLLAMA_BASE_URL,
 
